@@ -1,0 +1,5 @@
+time_sec = int(input())
+hours = (time_sec//3600)
+minutes = ((time_sec % 3600) // 60)
+sec = (time_sec-(hours*3600)-(minutes*60))
+print(hours, ':', minutes, ':', sec)
