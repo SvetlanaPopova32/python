@@ -1,11 +1,30 @@
-with open('text_5.txt', 'w') as my_file_1:
-    my_file_1.writelines(input())
+class Stationery:
+    def __init__(self, title):
+        self.title = title
+
+    def draw(self):
+        print('Запуск отрисовки')
+
+
+class Pen(Stationery):
+    def draw(self):
+        print(f"Запуск отрисовки {self.title}")
+
+
+class Pencil(Stationery):
+    def draw(self):
+        print(f'Запуск отрисовки {self.title}')
+
+
+class Handle(Stationery):
+    def draw(self):
+        print(f'Запуск отрисовки {self.title}')
 
 
 
-with open('text_5.txt', 'r') as my_file:
-    numbers = (my_file.readline().split(' '))
-    my_list = []
-    for number in numbers:
-        my_list.append(int(number))
-    print(sum(my_list))
+pencil = Pencil('карандашем')
+pencil.draw()
+
+pen = Pen('ручкой')
+pen.draw()
+
