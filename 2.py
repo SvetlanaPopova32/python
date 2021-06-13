@@ -1,9 +1,12 @@
-with open("text_2.txt", "r") as f_obj:
-    i = 0
-    for line in f_obj:
-        my_list = line.split()
-        print("количество слов в строке", len(my_list))
-        i += 1
-print("Количество строк", i)
+class OwnError(Exception):
+    def __init__(self, txt):
+        self.txt = txt
 
+inp_data_1 = int(input("Введите числитель "))
+inp_data_2 = int(input("Введите знаменатель: "))
 
+try:
+    res = inp_data_1 / inp_data_2
+    print(f"Результат деления: {res}")
+except ZeroDivisionError:
+    print("На ноль делить нельзя!")
